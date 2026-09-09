@@ -11,7 +11,7 @@ COPY prisma.config.ts ./
 
 COPY prisma ./prisma
 
-RUN npx prisma generate
+RUN DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy" npx prisma generate
 
 COPY generated ./generated
 
