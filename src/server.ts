@@ -11,8 +11,10 @@ async function startServer() {
       DB_NAME: process.env.DB_NAME,
     });
 
-    app.listen(process.env.port, () => {
-      console.log(`Server running on http://localhost:${process.env.port}`);
+    const port = Number(process.env.PORT) || 3000;
+
+    app.listen(port, "0.0.0.0", () => {
+      console.log(`Server running on http://0.0.0.0:${port}`);
     });
   } catch (error) {
     console.error("Failed to start server", error);
