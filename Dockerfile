@@ -4,18 +4,12 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install
+RUN npm ci
 
 COPY tsconfig.json ./
-COPY prisma.config.ts ./
-
-COPY prisma ./prisma
-
-RUN DATABASE_URL="postgresql://dummy:dummy@localhost:5432/dummy" npx prisma generate
-
-COPY generated ./generated
-
 COPY src ./src
+COPY migrations ./migrations
+COPY migrate.ts ./
 
 RUN npm run build
 

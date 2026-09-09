@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { TaskService } from "../services/task.service";
-import { TaskStatus } from "../../generated/prisma/client";
+import { TaskStatus } from "../types/task";
 
 const taskService = new TaskService();
 
