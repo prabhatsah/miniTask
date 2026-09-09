@@ -1,6 +1,6 @@
 import { Pool } from "pg";
 
-const isProduction = process.env.NODE_ENV !== "production";
+const isProduction = process.env.NODE_ENV === "production";
 
 export const pool = new Pool({
   host: process.env.DB_HOST,
@@ -9,11 +9,11 @@ export const pool = new Pool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
 
-  // ssl: isProduction
-  //   ? {
-  //       rejectUnauthorized: false,
-  //     }
-  //   : false,
+  ssl: isProduction
+    ? {
+        rejectUnauthorized: false,
+      }
+    : false,
 
   max: Number(process.env.DB_POOL_MAX ?? 10),
   idleTimeoutMillis: 30_000,
