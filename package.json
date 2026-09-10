@@ -12,17 +12,20 @@
     "migrate": "tsx migrate.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1129.0",
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
     "morgan": "^1.10.0",
+    "multer": "^2.3.0",
     "pg": "^8.23.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/morgan": "^1.9.10",
+    "@types/multer": "^2.2.0",
     "@types/node": "^24.3.0",
     "@types/pg": "^8.23.1",
     "node-pg-migrate": "^9.0.0",

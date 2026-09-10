@@ -4,6 +4,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 
 import taskRoutes from "./routes/task.routes";
+import fileRoutes from "./routes/file.routes";
 import { errorMiddleware } from "./middleware/error.middleware";
 
 const app = express();
@@ -26,6 +27,7 @@ app.get("/health", (req, res) => {
 });
 
 app.use("/api/tasks", taskRoutes);
+app.use("/api/files", fileRoutes);
 
 app.use(errorMiddleware);
 
